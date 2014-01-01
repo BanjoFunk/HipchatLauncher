@@ -1,0 +1,23 @@
+# Require your plugins here
+require 'robut/storage/yaml_store'
+require '/vagrant/banjobot'
+require '/vagrant/launcher'
+
+# Add the plugin classes to the Robut plugin list.
+# Plugins are handled in the order that they appear in this array.
+Robut::Plugin.plugins << Robut::Plugin::Banjobot
+
+# Configure the robut jabber connection and you're good to go!
+Robut::Connection.configure do |config|
+  config.jid = '14368_86465@chat.hipchat.com/bot'
+  config.password = 'estatewy1'
+  config.nick = 'Paul Morgan'
+  config.room = '14368_tech@conf.hipchat.com'
+  
+  # Some plugins require storage
+  Robut::Storage::YamlStore.file = ".robut"
+  config.store = Robut::Storage::YamlStore
+  
+  # Add a logger if you want to debug the connection
+  config.logger = Logger.new(STDOUT)
+end
