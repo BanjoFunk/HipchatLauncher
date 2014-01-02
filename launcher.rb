@@ -9,10 +9,6 @@ class Launcher
                :stop => "\x02 \x00\x00\x00\x00\x00\x00",
                :fire => "\x02\x10\x00\x00\x00\x00\x00\x00" }
 
-  TARGETS = { :brian => [2000, 500],
-              :paul => [1000, 400],
-              :bob => [5000, 1000] }
-
   def initialize
     @launcher = USB.devices.select { |d| d.idVendor == 0x2123 && d.idProduct == 0x1010 }.first
     raise "Cannot find missle launcher." unless @launcher
@@ -22,10 +18,6 @@ class Launcher
       rescue Errno::ENODATA => e
       end
     end
-  end
-
-  def target?(name)
-    TARGETS[name.downcase.to_sym] ? true : nil
   end
 
   def move(dir, time)
@@ -50,14 +42,8 @@ class Launcher
 
     targets.each do |t|
 
-      if t.kind_of? Array
-        target_x = t[0].to_i
-        target_y = t[1].to_i
-      else
-        name = t.downcase.to_sym
-        target_x = TARGETS[name][0]
-        target_y = TARGETS[name][1]
-      end
+      target_x = t[0].to_i
+      target_y = t[1].to_i
 
       diff_x = target_x - current_x
       diff_y = target_y - current_y

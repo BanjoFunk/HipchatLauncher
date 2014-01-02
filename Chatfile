@@ -9,10 +9,18 @@ Robut::Plugin.plugins << Robut::Plugin::Banjobot
 
 # Configure the robut jabber connection and you're good to go!
 Robut::Connection.configure do |config|
-  config.jid = '14368_86465@chat.hipchat.com/bot'
-  config.password = 'estatewy1'
-  config.nick = 'Paul Morgan'
-  config.room = '14368_tech@conf.hipchat.com'
+
+  config.jid = '24491_140005@chat.hipchat.com/bot'
+  config.password = 'skiing1'
+  config.nick = 'banjobot humperdink'
+  config.mention_name = 'banjobot'
+  config.admin = 'Josh Garner'
+  config.room = '24491_banjofunk@conf.hipchat.com'
+
+  # config.jid = '14368_86465@chat.hipchat.com/bot'
+  # config.password = 'estatewy1'
+  # config.nick = 'Paul Morgan'
+  # config.room = '14368_tech@conf.hipchat.com'
   
   # Some plugins require storage
   Robut::Storage::YamlStore.file = ".robut"
