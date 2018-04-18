@@ -11,7 +11,7 @@ Robut::Plugin.plugins << Robut::Plugin::Banjobot
 Robut::Connection.configure do |config|
 
   config.jid = '24491_140005@chat.hipchat.com/bot'
-  config.password = 'skiing1'
+  config.password = 'password'
   config.nick = 'banjobot humperdink'
   config.mention_name = 'banjobot'
   config.admin = 'Josh Garner'
