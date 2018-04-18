@@ -18,7 +18,7 @@ Robut::Connection.configure do |config|
   config.room = '24491_banjofunk@conf.hipchat.com'
 
   # config.jid = '14368_86465@chat.hipchat.com/bot'
-  # config.password = 'estatewy1'
+  # config.password = 'password'
   # config.nick = 'Paul Morgan'
   # config.room = '14368_tech@conf.hipchat.com'
   
